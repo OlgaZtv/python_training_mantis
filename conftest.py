@@ -3,6 +3,7 @@ import json
 import os.path
 from fixture.application import Application
 
+
 fixture = None
 target = None
 
