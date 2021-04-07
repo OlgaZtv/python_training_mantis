@@ -8,6 +8,6 @@ def test_delete_project(app, db):
     old_projects = db.get_projects_list()
     project = random.choice(old_projects)
     app.project.delete_project(project)
-    new_projects = db.get_projects_list()
+    new_projects = app.soap.get_projects_list_for_user(app.config['webadmin']['user'], app.config['webadmin']['password'])
     old_projects.remove(project)
     assert sorted(old_projects, key=Project.id_or_max) == sorted(new_projects, key=Project.id_or_max)

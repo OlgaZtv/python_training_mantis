@@ -13,5 +13,5 @@ def test_singup_new_account(app):
     password = "test"
     app.james.ensure_user_exist(username, password)
     app.signup.new_user(username, email, password)
-    assert app.soap.can_logon(username, password)
+    assert app.soap.can_login(username, password)
     app.session.logout()

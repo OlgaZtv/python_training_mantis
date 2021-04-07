@@ -30,6 +30,7 @@ class Application:
         self.soap = SoapHelper(self)
         self.config = config
         self.base_url = config["web"]["baseUrl"]
+        self.pwd = config['webadmin']['password']
 
     def is_valid(self):
         try:
